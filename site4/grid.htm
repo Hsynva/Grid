@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body { margin: 0; background: silver }
+            #container {
+                max-width: 1000px;
+                margin: auto;
+                display: grid;
+                grid-template-rows: 30px 100px 60vh 90px 40px;
+                grid-template-areas: 'n'  'h'  'm'  'a'  'f';
+                
+            }
+            header  { grid-area: h; background: orange; /* grid-column: 1 / 4 */ }
+            nav     { grid-area: n; background: yellow; /*  grid-row: 2 / 4 */ }
+            main    { grid-area: m; background: white }
+            aside   { grid-area: a; background: gray }
+            footer  { grid-area: f; background: red; /* grid-column: 2 / 4 */ }
+
+            @media only screen and (min-width: 600px) {
+                #container {
+                    grid-template-columns: 20% auto 160px;
+                    grid-template-rows: 100px 60vh 40px;
+                    grid-template-areas:'h h h'
+                                        'n m a'
+                                        'n f f';
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <header>basliq</header>
+            <nav>Menu</nav>
+            <main>Blah blah blah</main>
+            <aside>Reklam</aside>
+            <footer>Copyright</footer>
+        </div>
+    </body>
+</html>
